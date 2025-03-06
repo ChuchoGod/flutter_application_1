@@ -5,6 +5,7 @@ import 'package:flutter_application_1/tabs/pancakes_tab.dart';
 import 'package:flutter_application_1/tabs/pizza_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/my_tab.dart';
+
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -14,11 +15,21 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   List<Widget> myTabs = [
-    const MyTab(iconPath: "lib/icons/donut.png",),
-    const MyTab(iconPath: "lib/icons/burger.png",),
-    const MyTab(iconPath: "lib/icons/smoothie.png",),
-    const MyTab(iconPath: "lib/icons/pancakes.png",),
-    const MyTab(iconPath: "lib/icons/pizza.png",),
+    const MyTab(
+      iconPath: "lib/icons/donut.png",
+    ),
+    const MyTab(
+      iconPath: "lib/icons/burger.png",
+    ),
+    const MyTab(
+      iconPath: "lib/icons/smoothie.png",
+    ),
+    const MyTab(
+      iconPath: "lib/icons/pancakes.png",
+    ),
+    const MyTab(
+      iconPath: "lib/icons/pizza.png",
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -66,16 +77,18 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
             //2. Pestañas (TabBar)
-          TabBar(tabs: myTabs),
+            TabBar(tabs: myTabs),
             //3. Contenido de las pestañas (TabBarView)
-            TabBarView(children: [
-              DonutTab(),
-              BurgerTab(),
-              SmoothieTab(),
-              PancakesTab(),
-              PizzaTab(),
-            ])
-      
+            Expanded(
+              child: TabBarView(children: [
+                DonutTab(),
+                BurgerTab(),
+                SmoothieTab(),
+                PancakesTab(),
+                PizzaTab()
+              ]),
+            )
+
             //4. Carrito (Cart)
           ],
         ),
