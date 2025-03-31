@@ -25,10 +25,11 @@ class BurgerTab extends StatelessWidget {
         itemBuilder: (context, index) {
 
           return DonutTile(
-            donutFlavor: donutsOnSale [index][0],
-            donutPrice: donutsOnSale [index][1],
-            donutColor: donutsOnSale [index][2],
-            imageName: donutsOnSale [index][3]
+            donutFlavor: donutsOnSale[index][0],
+              donutStore: donutsOnSale[index][1],
+              donutPrice: donutsOnSale[index][2],
+              donutColor: donutsOnSale[index][3],
+              imageName: donutsOnSale[index][4]
           );
         });
   }
